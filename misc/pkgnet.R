@@ -60,7 +60,6 @@ plot(g1, vertex.label=NA, vertex.size=2, layout=k)
 pkgnet <- function(a, enams=c("Depends", "Suggests", "Contains", "Imports", "Enhances"),
     vnams=c("Version", "Priority", "Bundle", "License", "File", "Repository") )
 {
-    require(igraph)
     # list of edgelists and nodes lists
     l <- lapply(enams, function(vn)
         {
@@ -87,7 +86,7 @@ pkgnet <- function(a, enams=c("Depends", "Suggests", "Contains", "Imports", "Enh
      nodes <- do.call("rbind", lapply(l, "[[", "nodes"))
      nodes <- unique(nodes)
      edges <- do.call("rbind", lapply(l, "[[", "edges"))
-     rval <- graph.data.frame(edges, vertices=nodes)
+     rval <- igraph::graph.data.frame(edges, vertices=nodes)
      rval
 }
 
