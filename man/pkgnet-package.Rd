@@ -1,43 +1,17 @@
 \name{pkgnet-package}
 \alias{pkgnet-package}
-\alias{pkgnet}
 \docType{package}
-\title{
-What the package does (short line)
-~~ package title ~~
-}
+\title{Network analysis of relations between R packages}
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
-}
-\details{
-\tabular{ll}{
-Package: \tab pkgnet\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2010-02-18\cr
-License: \tab What license is it under?\cr
-LazyLoad: \tab yes\cr
-}
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+Package DESCRIPTION files allows for specifying several types of inter-package
+relations.  These include fields like Depends, Suggests, Enhances etc. This
+package allows for recovering graph structure based on these relations. Network
+representation of R repositories enables the user to fruitfully explore the
+interconnected space of available R functionality while the developers or
+repository maintainers can quickly scan package forward and reverse
+dependencies.
 }
 \author{
-Who wrote it
-
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Author and maintainter: Michal Bojanowski \email{m.j.bojanowski@uu.nl}
 }
-\references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
-~~ the R documentation directory ~~
 \keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
-}

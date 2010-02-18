@@ -1,10 +1,17 @@
 Package: pkgnet
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Network analysis of relations between R packages
+Version: 0.0-1
 Date: 2010-02-18
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Michal Bojanowski
+Maintainer: Michal Bojanowski <m.j.bojanowski@uu.nl>
+Description: Package DESCRIPTION files allows for specifying several types of
+	inter-package relations.  These include fields like Depends, Suggests,
+	Enhances etc. This package allows for recovering graph structure based
+	on these relations. Network representation of R repositories enables
+	the user to fruitfully explore the interconnected space of available R
+	functionality while the developers or repository maintainers can
+	quickly scan package forward and reverse dependencies.
+Depends: igraph, utils
+License: CC-GNU LGPL 2.1
 LazyLoad: yes
