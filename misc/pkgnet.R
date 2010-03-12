@@ -9,15 +9,21 @@ g <- delete.vertices(g, V(g)[ name %in% bpkg ] )
 summary(g)
 
 # plot total graph
-koords <- layout.fruchterman.reingold(g, params=list(niter=70))
+koords <- layout.fruchterman.reingold(g, params=list(niter=30))
 u <- sort(unique(E(g)$type))
 typ <- match( E(g)$type, u)
-plot(g, vertex.size=1, layout=koords, vertex.label=NA,
-    edge.arrow.size=.5, vertex.label.cex=.9, edge.color=typ)
+rtyp <- match( V(g)$Repository, sort(unique(V(g)$Repository)) )
+plot(g, vertex.size=1, layout=koords, vertex.label=V(g)$Package,
+    vertex.label.cex=.2,
+    edge.arrow.size=.1, edge.color=typ, vertex.color=rtyp)
 legend("topleft", legend=u, lty=1, col=seq(along=typ))
 
 
+plot(g, vertex.size=1, layout=koords, vertex.label=V(g)$Package,
+    vertex.label.cex=.2, edge.arrow.size=.1, edge.color="gray",
+    vertex.color=rtyp)
 
+dev.print(pdf, file="cran.pdf", width=50, height=50)
 
 
 # only network packages
