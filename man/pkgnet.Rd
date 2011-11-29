@@ -6,8 +6,8 @@ Given the matrix as returned by \code{available.packages}
 construct a graph, of class \code{igraph} of inter-package relations.
 }
 \usage{
-pkgnet(a, enams = c("Depends", "Suggests", "Contains", "Imports", "Enhances"),
-vnams = c("Version", "Priority", "Bundle", "License", "File", "Repository"))
+pkgnet(a, enams = c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
+vnams = c("Version", "Priority", "License", "File", "Repository"))
 }
 \arguments{
   \item{a}{matrix, as returned by \code{available.packages}}
@@ -27,5 +27,7 @@ Object of class \code{igraph}.
 \code{\link{available.packages}}, \code{\link{graph.data.frame}}
 }
 \examples{
-# TODO
+a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
+g <- pkgnet(a)
+summary(g)
 }

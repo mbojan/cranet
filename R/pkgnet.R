@@ -1,7 +1,13 @@
 pkgnet <-
-function(a, enams=c("Depends", "Suggests", "Contains", "Imports", "Enhances"),
-    vnams=c("Version", "Priority", "Bundle", "License", "File", "Repository") )
+function(a, enams=c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
+    vnams=c("Version", "Priority", "License", "File", "Repository") )
 {
+  # check available relations
+  i <- enams %in% colnames(a)
+  if(!all(i)) stop(paste("fields not found:", paste(enams[!i], collapse=", ")))
+  # check other fields
+  i <- vnams %in% colnames(a)
+  if(!all(i)) stop(paste("fields not found:", paste(vnams[!i], collapse=", ")))
     # list of edgelists and nodes lists
     l <- lapply(enams, function(vn)
         {
@@ -15,12 +21,14 @@ function(a, enams=c("Depends", "Suggests", "Contains", "Imports", "Enhances"),
                 } )
             len <- sapply(el, length)
             # edge list
-            edges <- data.frame( ego=rep(names(el), len), alter=unlist(el), type=rep(vn, sum(len)))
+            edges <- data.frame( ego=rep(names(el), len), alter=unlist(el),
+                                type=rep(vn, sum(len)), stringsAsFactors=FALSE)
             # node list
-            nodes <- data.frame(name=sort(unique(c(names(el), unlist(el)))))
+            nodes <- data.frame(name=sort(unique(c(names(el), unlist(el)))),
+                                stringsAsFactors=FALSE)
             # add package attributes for 'a'
             mv <- match(nodes$name, a[,"Package"])
-            z <- a[mv, vnams]
+            z <- as.data.frame(a[mv, vnams], stringsAsFactors=FALSE)
             rownames(z) <- NULL
             nodes <- cbind( nodes, z )
             list(nodes=nodes, edges=edges)
