@@ -13,5 +13,5 @@ Description: Package DESCRIPTION files allows for specifying several types of
 	functionality while the developers or repository maintainers can
 	quickly scan package forward and reverse dependencies.
 Depends: igraph, utils
-License: CC-GNU LGPL 2.1
+License: GPL 3
 LazyLoad: yes
