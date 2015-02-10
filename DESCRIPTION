@@ -2,7 +2,7 @@ Package: pkgnet
 Type: Package
 Title: Network analysis of relations between R packages
 Version: 0.1-0
-Date: 2012-01-16
+Date: 2015-02-10
 Author: Michal Bojanowski
 Maintainer: Michal Bojanowski <michal2992@gmail.com>
 Description: Package DESCRIPTION files allows for specifying several types of
@@ -12,6 +12,6 @@ Description: Package DESCRIPTION files allows for specifying several types of
 	the user to fruitfully explore the interconnected space of available R
 	functionality while the developers or repository maintainers can
 	quickly scan package forward and reverse dependencies.
-Depends: igraph, utils
-License: GPL 3
+Imports: igraph
+License: GPL-2
 LazyLoad: yes
