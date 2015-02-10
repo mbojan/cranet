@@ -3,8 +3,14 @@
 \docType{package}
 \name{pkgnet-package}
 \alias{pkgnet-package}
-\title{Network analysis of relations between R packages}
+\title{Network based packages on CRAN}
 \description{
+This is a network object containing packages and relations between them. It
+is based on a snapshot taken on February 18, 2010 around 18:30 GMT.
+}
+\details{
+Network analysis of relations between R packages
+
 Package DESCRIPTION files allows for specifying several types of
 inter-package relations.  These include fields like Depends, Suggests,
 Enhances etc. This package allows for recovering graph structure based on
@@ -15,7 +21,6 @@ forward and reverse dependencies.
 }
 \author{
 Author and maintainter: Michal Bojanowski
-\email{m.j.bojanowski@uu.nl}
 }
 \keyword{package}
 
