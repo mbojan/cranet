@@ -18,9 +18,9 @@
 #' @seealso \code{\link{available.packages}}, \code{\link{graph.data.frame}}
 #' @examples
 #' 
-#' a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
-#' g <- pkgnet(a)
-#' summary(g)
+#' # a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
+#' # g <- pkgnet(a)
+#' # summary(g)
 #' 
 #' @export pkgnet
 pkgnet <-

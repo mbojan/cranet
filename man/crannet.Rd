@@ -34,44 +34,34 @@ in this object:
 Fetched from \url{http://cran.at.r-project.org} on February 18, 2010.
 }
 \description{
-Snapshot of CRAN packages made on 2010-02-18.
+Snapshot of CRAN packages made on 2015-02-10
 }
 \examples{
 data(crannet)
 require(igraph)
 
-
 # neighborhood of network "backend" packages:
-# "network", "igraph", and "graph"
-
-# using 'in' oprator does not work in examples !?!?
-inn <- function(x, y) match(x, y, nomatch=0) > 0
+# "network", "networkDynamic", "igraph", and "graph"
 
 # drop some obvious dependencies: R, base and recommended packages
 g <- delete.vertices(crannet, V(crannet)[ name == "R" ] )
-g <- delete.vertices(g, V(g)[ inn(Priority, "recommended") ] )
-bpkg <- c("stats", "tools", "utils", "methods", "stats4", "rgl", "tcltk",
-  "base")
-g <- delete.vertices(g, V(g)[ inn(name, bpkg) ] )
+g <- delete.vertices(g, V(g)[ Priority \%in\% "recommended" ] )
+bpkg <- c("stats", "tools", "utils", "methods", "stats4", "rgl", "tcltk", "base")
+g <- delete.vertices(g, V(g)[ name \%in\% bpkg ] )
 summary(g)
 
 # pick the neighborhood and make the subgraph
-npkg <- c("igraph", "network", "graph")
-n <- neighborhood(g, 1, V(g)[ inn(name, npkg) ] )
-sg <- subgraph(g, unique(unlist(n)) )
+npkg <- c("igraph", "network", "graph", "networkDynamic")
+n <- neighborhood(g, 1, V(g)[ name \%in\% npkg ] )
+sg <- simplify( induced.subgraph(g, unique(unlist(n)) ) )
 summary(sg)
 
 # plot it
 set.seed(2992)
-koords <- layout.fruchterman.reingold(sg, params=list(niter=80))
-u <- sort(unique(E(sg)$type))
-typ <- match( E(sg)$type, u)
-palette(rainbow(3))
+koords <- layout.fruchterman.reingold(sg)
 plot(sg, vertex.size=1, vertex.label=V(sg)$name, layout=koords,
-  vertex.label.color="black", edge.arrow.size=.5, vertex.label.cex=.9,
-  edge.color=typ, vertex.label.family="Helvetica")
-legend("bottomleft", legend=u, lty=1, col=seq(along=typ))
-palette("default")
+     vertex.label.color="black", edge.arrow.size=.5, vertex.label.cex=.9,
+     vertex.label.family="Helvetica")
 }
 \keyword{datasets}
 
