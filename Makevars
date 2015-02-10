@@ -1,9 +1,0 @@
-PKGNAME=pkgnet
-SRCDIR=$(shell pwd)
-DATE=$(shell date)
-INSTALLDIR=$(shell dirname $(SRCDIR))/bin
-CHECKDIR=$(shell dirname $(SRCDIR))
-RCALL=R CMD
-PKGPDF=$(PKGNAME:=.pdf)
-PKGDVI=$(PKGNAME:=.dvi)
-SVNREV=$(shell svnversion | sed -e 's/[0-9]*://')
