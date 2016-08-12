@@ -1,6 +1,6 @@
 #' Snapshot of CRAN packages
 #'
-#' Snapshot of CRAN packages made on 2015-02-10
+#' Snapshot of CRAN packages made on 2016-08-12
 #'
 #' @format 
 #' The network object is of class \code{igraph}. It is a directed network which
@@ -28,7 +28,7 @@
 #' See \code{\link{available.packages}} for the description of the attributes
 #' and types of inter-package relations.
 #'
-#' @source Fetched from \url{http://cran.at.r-project.org} on February 18, 2010.
+#' @source Fetched from \url{http://cran.at.r-project.org} on August 12, 2016.
 #' @keywords datasets
 #' @docType data
 #' @name crannet
