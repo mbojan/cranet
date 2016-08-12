@@ -27,12 +27,15 @@ pkgnet <-
 function(a, enams=c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
     vnams=c("Version", "Priority", "License", "File", "Repository") )
 {
+  d <- as.data.frame(a, stringsAsFactors=FALSE, row.names=NA)
   # check available relations
-  i <- enams %in% colnames(a)
-  if(!all(i)) stop(paste("fields not found:", paste(enams[!i], collapse=", ")))
+  i <- enams %in% names(d)
+  if(!all(i)) 
+    stop(paste("fields not found:", paste(enams[!i], collapse=", ")))
   # check other fields
-  i <- vnams %in% colnames(a)
-  if(!all(i)) stop(paste("fields not found:", paste(vnams[!i], collapse=", ")))
+  i <- vnams %in% names(d)
+  if(!all(i)) 
+    stop(paste("fields not found:", paste(vnams[!i], collapse=", ")))
     # list of edgelists and nodes lists
     l <- lapply(enams, function(vn)
         {
@@ -64,4 +67,3 @@ function(a, enams=c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
      rval <- igraph::graph.data.frame(edges, vertices=nodes)
      rval
 }
-
