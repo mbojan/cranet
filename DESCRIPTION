@@ -6,12 +6,14 @@ Date: 2015-02-10
 Author: Michal Bojanowski
 Maintainer: Michal Bojanowski <michal2992@gmail.com>
 Description: Package DESCRIPTION files allows for specifying several types of
-	inter-package relations.  These include fields like Depends, Suggests,
-	Enhances etc. This package allows for recovering graph structure based
-	on these relations. Network representation of R repositories enables
-	the user to fruitfully explore the interconnected space of available R
-	functionality while the developers or repository maintainers can
-	quickly scan package forward and reverse dependencies.
-Imports: igraph
+    inter-package relations.  These include fields like Depends, Suggests,
+    Enhances etc. This package allows for recovering graph structure based
+    on these relations. Network representation of R repositories enables
+    the user to fruitfully explore the interconnected space of available R
+    functionality while the developers or repository maintainers can
+    quickly scan package forward and reverse dependencies.
+Imports:
+    igraph
 License: GPL-2
 LazyLoad: yes
+RoxygenNote: 5.0.1
