@@ -14,6 +14,7 @@ Description: Package DESCRIPTION files allows for specifying several types of
     quickly scan package forward and reverse dependencies.
 Imports:
     igraph
+Suggests: testthat
 License: MIT + file LICENSE
 LazyLoad: yes
 LazyData: yes
