@@ -19,13 +19,21 @@ pkgnet(object, ...)
   "NeedsCompilation", "File", "Repository"))
 }
 \arguments{
-\item{enams}{character, names of columns of \code{a} that are to be used as
+\item{object}{a matrix as returned by \code{\link{available.packages}} or a 
+character scalar, one of \code{"cran"} or \code{"bioc"} to fetch and
+process packages available on CRAN or on Bioconductor, or an URL to a
+CRAN-like repository.}
+
+\item{...}{arguments passed to/from other methods}
+
+\item{ap_args}{\code{NULL} or list of arguments passed to
+\code{\link{avaialble.packages}}}
+
+\item{enams}{character, names of columns of \code{a} that are to be used as 
 edge attributes}
 
-\item{vnams}{character, names of columns of \code{a} that are to be used as
+\item{vnams}{character, names of columns of \code{a} that are to be used as 
 vertex attributes}
-
-\item{a}{matrix, as returned by \code{available.packages}}
 }
 \value{
 Object of class \code{igraph}.

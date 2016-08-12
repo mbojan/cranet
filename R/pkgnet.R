@@ -9,13 +9,22 @@
 #' \code{type}. It stores the type of relation as provided with \code{enams}
 #' argument.
 #' 
-#' @param a matrix, as returned by \code{available.packages}
-#' @param enams character, names of columns of \code{a} that are to be used as
-#' edge attributes
-#' @param vnams character, names of columns of \code{a} that are to be used as
-#' vertex attributes
+#' @param object a matrix as returned by \code{\link{available.packages}} or a 
+#'   character scalar, one of \code{"cran"} or \code{"bioc"} to fetch and
+#'   process packages available on CRAN or on Bioconductor, or an URL to a
+#'   CRAN-like repository.
+#' @param enams character, names of columns of \code{a} that are to be used as 
+#'   edge attributes
+#' @param vnams character, names of columns of \code{a} that are to be used as 
+#'   vertex attributes
+#' @param ap_args \code{NULL} or list of arguments passed to
+#'   \code{\link{avaialble.packages}}
+#' @param ... arguments passed to/from other methods
+#' 
 #' @return Object of class \code{igraph}.
+#' 
 #' @seealso \code{\link{available.packages}}, \code{\link{graph.data.frame}}
+#' 
 #' @examples
 #' \dontrun{
 #' a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
@@ -58,18 +67,18 @@ pkgnet.matrix <- function(object,
                            "File", "Repository")
 ) {
   # check available relations
-  i <- enams %in% colnames(d)
+  i <- enams %in% colnames(object)
   if(!all(i)) 
     stop(paste("fields not found:", paste(enams[!i], collapse=", ")))
   # check other fields
-  i <- vnams %in% colnames(d)
+  i <- vnams %in% colnames(object)
   if(!all(i)) 
     stop(paste("fields not found:", paste(vnams[!i], collapse=", ")))
   # list of edgelists and nodes lists
   l <- lapply(enams, function(vn)
   {
     # split on commas and drop newline
-    alt <- strsplit( gsub("\n", "", a[,vn]), ", *")
+    alt <- strsplit( gsub("\n", "", object[,vn]), ", *")
     # get rid of package versions
     el <- lapply(alt, function(x)
     {
@@ -83,9 +92,9 @@ pkgnet.matrix <- function(object,
     # node list
     nodes <- data.frame(name=sort(unique(c(names(el), unlist(el)))),
                         stringsAsFactors=FALSE)
-    # add package attributes for 'a'
-    mv <- match(nodes$name, a[,"Package"])
-    z <- as.data.frame(a[mv, vnams], stringsAsFactors=FALSE)
+    # add package attributes for 'object'
+    mv <- match(nodes$name, object[,"Package"])
+    z <- as.data.frame(object[mv, vnams], stringsAsFactors=FALSE)
     rownames(z) <- NULL
     nodes <- cbind( nodes, z )
     list(nodes=nodes, edges=edges)
