@@ -14,7 +14,7 @@ Description: Package DESCRIPTION files allows for specifying several types of
     quickly scan package forward and reverse dependencies.
 Imports:
     igraph
-License: GPL-2
+License: MIT + file LICENSE
 LazyLoad: yes
 LazyData: yes
 RoxygenNote: 5.0.1
