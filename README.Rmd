@@ -1,6 +1,6 @@
 ---
 title: "Build and analyze network of CRAN packages"
-date: "`r Sys.Date()`"
+date: "`r Sys.time()`"
 output: github_document
 ---
 
@@ -65,7 +65,7 @@ sg <- simplify( induced.subgraph(g, unique(unlist(n)) ) )
 summary(sg)
 ```
 
-Plot it:
+Plot it. Colors show which of the "seed" packages a given package depends on:
 
 ```{r network_plot}
 set.seed(2992)
