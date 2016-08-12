@@ -16,7 +16,7 @@ pkgnet(object, ...)
 \method{pkgnet}{matrix}(object, enams = c("Depends", "Suggests", "Imports",
   "Enhances", "LinkingTo"), vnams = c("Version", "Priority", "License",
   "License_is_FOSS", "License_restricts_use", "OS_type", "Archs", "MD5sum",
-  "NeedsCompilation", "File", "Repository"))
+  "NeedsCompilation", "File", "Repository"), ...)
 }
 \arguments{
 \item{object}{a matrix as returned by \code{\link{available.packages}} or a 
@@ -27,7 +27,7 @@ CRAN-like repository.}
 \item{...}{arguments passed to/from other methods}
 
 \item{ap_args}{\code{NULL} or list of arguments passed to
-\code{\link{avaialble.packages}}}
+\code{\link{available.packages}}}
 
 \item{enams}{character, names of columns of \code{a} that are to be used as 
 edge attributes}

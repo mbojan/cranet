@@ -18,7 +18,7 @@
 #' @param vnams character, names of columns of \code{a} that are to be used as 
 #'   vertex attributes
 #' @param ap_args \code{NULL} or list of arguments passed to
-#'   \code{\link{avaialble.packages}}
+#'   \code{\link{available.packages}}
 #' @param ... arguments passed to/from other methods
 #' 
 #' @return Object of class \code{igraph}.
@@ -64,7 +64,8 @@ pkgnet.matrix <- function(object,
                    enams=c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
                    vnams=c("Version", "Priority", "License", "License_is_FOSS", 
                            "License_restricts_use", "OS_type", "Archs", "MD5sum", "NeedsCompilation",
-                           "File", "Repository")
+                           "File", "Repository"),
+                   ...
 ) {
   # check available relations
   i <- enams %in% colnames(object)
