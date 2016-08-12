@@ -3,3 +3,5 @@ man-roxygen
 ^\.Rproj\.user$
 .travis.yml
 appveyor.yml
+Makefile
+internal
