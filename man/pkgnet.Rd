@@ -5,8 +5,9 @@
 \title{Build a network based on package availability matrix}
 \usage{
 pkgnet(a, enams = c("Depends", "Suggests", "Imports", "Enhances",
-  "LinkingTo"), vnams = c("Version", "Priority", "License", "File",
-  "Repository"))
+  "LinkingTo"), vnams = c("Version", "Priority", "License", "License_is_FOSS",
+  "License_restricts_use", "OS_type", "Archs", "MD5sum", "NeedsCompilation",
+  "File", "Repository"))
 }
 \arguments{
 \item{a}{matrix, as returned by \code{available.packages}}
