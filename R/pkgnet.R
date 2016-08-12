@@ -17,10 +17,12 @@
 #' @return Object of class \code{igraph}.
 #' @seealso \code{\link{available.packages}}, \code{\link{graph.data.frame}}
 #' @examples
+#' \dontrun{
+#' a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
+#' g <- pkgnet(a)
+#' summary(g)
+#' }
 #' 
-#' # a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
-#' # g <- pkgnet(a)
-#' # summary(g)
 #' 
 #' @export pkgnet
 pkgnet <- function(a, 

@@ -33,10 +33,12 @@ types of relations can be disentagled using edge attribute called
 argument.
 }
 \examples{
+\dontrun{
+a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
+g <- pkgnet(a)
+summary(g)
+}
 
-# a <- available.packages(contrib.url("http://cran.r-project.org", "source"))
-# g <- pkgnet(a)
-# summary(g)
 
 }
 \seealso{
