@@ -1,20 +1,12 @@
-
-
-#' Network based packages on CRAN
+#' Build and Analyze Network of R Packages
 #' 
-#' This is a network object containing packages and relations between them. It
-#' is based on a snapshot taken on February 18, 2010 around 18:30 GMT.
-#' 
-#' 
-#' Network analysis of relations between R packages
-#' 
-#' Package DESCRIPTION files allows for specifying several types of
-#' inter-package relations.  These include fields like Depends, Suggests,
-#' Enhances etc. This package allows for recovering graph structure based on
-#' these relations. Network representation of R repositories enables the user
-#' to fruitfully explore the interconnected space of available R functionality
-#' while the developers or repository maintainers can quickly scan package
-#' forward and reverse dependencies.
+#' Package DESCRIPTION files allows for specifying several types of 
+#' inter-package relations. These include fields like Depends, Suggests, 
+#' Enhances etc. This package and function \code{\link{pkgnet}} allows for 
+#' recovering graph structure based on these relations. Network representation 
+#' of R repositories enables the user to explore the interconnected space of 
+#' available R functionality while the developers or repository maintainers can 
+#' quickly scan package forward and reverse dependencies.
 #' 
 #' 
 #' @name pkgnet-package
