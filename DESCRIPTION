@@ -16,4 +16,5 @@ Imports:
     igraph
 License: GPL-2
 LazyLoad: yes
+LazyData: yes
 RoxygenNote: 5.0.1
