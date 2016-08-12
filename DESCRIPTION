@@ -2,9 +2,8 @@ Package: pkgnet
 Type: Package
 Title: Network analysis of relations between R packages
 Version: 0.1-0
-Date: 2015-02-10
-Author: Michal Bojanowski
-Maintainer: Michal Bojanowski <michal2992@gmail.com>
+Date: 2016-08-12
+Authors@R: person("Michal", "Bojanowski", role=c("aut", "cre"), email="michal2992@gmail.com")
 Description: Package DESCRIPTION files allows for specifying several types of
     inter-package relations.  These include fields like Depends, Suggests,
     Enhances etc. This package allows for recovering graph structure based
