@@ -1,4 +1,3 @@
-data(crannet)
 require(igraph)
 
 # neighborhood of network "backend" packages:

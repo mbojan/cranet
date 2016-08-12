@@ -35,7 +35,6 @@ Fetched from \url{http://cran.at.r-project.org} on August 12, 2016.
 Snapshot of CRAN packages made on 2016-08-12
 }
 \examples{
-data(crannet)
 require(igraph)
 
 # neighborhood of network "backend" packages:

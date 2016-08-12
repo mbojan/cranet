@@ -2,21 +2,30 @@
 % Please edit documentation in R/pkgnet.R
 \name{pkgnet}
 \alias{pkgnet}
+\alias{pkgnet.character}
+\alias{pkgnet.default}
+\alias{pkgnet.matrix}
 \title{Build a network based on package availability matrix}
 \usage{
-pkgnet(a, enams = c("Depends", "Suggests", "Imports", "Enhances",
-  "LinkingTo"), vnams = c("Version", "Priority", "License", "License_is_FOSS",
-  "License_restricts_use", "OS_type", "Archs", "MD5sum", "NeedsCompilation",
-  "File", "Repository"))
+pkgnet(object, ...)
+
+\method{pkgnet}{default}(object, ...)
+
+\method{pkgnet}{character}(object, ap_args = NULL, ...)
+
+\method{pkgnet}{matrix}(object, enams = c("Depends", "Suggests", "Imports",
+  "Enhances", "LinkingTo"), vnams = c("Version", "Priority", "License",
+  "License_is_FOSS", "License_restricts_use", "OS_type", "Archs", "MD5sum",
+  "NeedsCompilation", "File", "Repository"))
 }
 \arguments{
-\item{a}{matrix, as returned by \code{available.packages}}
-
 \item{enams}{character, names of columns of \code{a} that are to be used as
 edge attributes}
 
 \item{vnams}{character, names of columns of \code{a} that are to be used as
 vertex attributes}
+
+\item{a}{matrix, as returned by \code{available.packages}}
 }
 \value{
 Object of class \code{igraph}.
