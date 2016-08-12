@@ -24,20 +24,45 @@
 #' }
 #' 
 #' 
-#' @export pkgnet
-pkgnet <- function(a, 
+#' @export 
+pkgnet <- function(object, ...) UseMethod("pkgnet")
+
+
+#' @method pkgnet default
+#' @rdname pkgnet
+#' @export
+pkgnet.default <- function(object, ...) {
+  stop("don't know how to handle object of class ", oldClass(object))
+}
+
+
+#' @method pkgnet character
+#' @rdname pkgnet
+#' @export
+pkgnet.character <- function(object, ap_args=NULL, ...) {
+  u <- switch(object,
+              cran = "https://cloud.r-project.org",
+              bioc = "https://bioconductor.org/packages/3.0/bioc",
+              object)
+  a <- do.call("available.packages", c(list(repos=u), ap_args))
+  pkgnet.matrix(a, ...)
+}
+
+#' @method pkgnet matrix
+#' @rdname pkgnet
+#' @export
+pkgnet.matrix <- function(object, 
                    enams=c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
                    vnams=c("Version", "Priority", "License", "License_is_FOSS", 
                            "License_restricts_use", "OS_type", "Archs", "MD5sum", "NeedsCompilation",
                            "File", "Repository")
 ) {
-  d <- as.data.frame(a, stringsAsFactors=FALSE, row.names=NA)
   # check available relations
-  i <- enams %in% names(d)
+  i <- enams %in% colnames(d)
   if(!all(i)) 
     stop(paste("fields not found:", paste(enams[!i], collapse=", ")))
   # check other fields
-  i <- vnams %in% names(d)
+  i <- vnams %in% colnames(d)
   if(!all(i)) 
     stop(paste("fields not found:", paste(vnams[!i], collapse=", ")))
   # list of edgelists and nodes lists
