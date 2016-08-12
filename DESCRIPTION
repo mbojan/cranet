@@ -12,6 +12,7 @@ Description: Package DESCRIPTION files allows for specifying several types of
     the user to fruitfully explore the interconnected space of available R
     functionality while the developers or repository maintainers can
     quickly scan package forward and reverse dependencies.
+Depends: R (>= 2.10)
 Imports:
     igraph
 Suggests: testthat
