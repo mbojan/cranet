@@ -42,7 +42,7 @@ function(a, enams=c("Depends", "Suggests", "Imports", "Enhances", "LinkingTo"),
             el <- lapply(alt, function(x)
                 {
                     rval <- gsub( "\\(.*\\)", "", x)
-                    na.omit( gsub(" +", "", rval) )
+                    stats::na.omit( gsub(" +", "", rval) )
                 } )
             len <- sapply(el, length)
             # edge list
