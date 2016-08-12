@@ -32,5 +32,5 @@
 #' @keywords datasets
 #' @docType data
 #' @name crannet
-#' @example examples/crannet.R
+#' @example man-roxygen/crannet.R
 NULL
