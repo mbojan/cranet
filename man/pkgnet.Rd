@@ -2,8 +2,8 @@
 % Please edit documentation in R/pkgnet.R
 \name{pkgnet}
 \alias{pkgnet}
-\alias{pkgnet.character}
 \alias{pkgnet.default}
+\alias{pkgnet.character}
 \alias{pkgnet.matrix}
 \title{Build a network based on package availability matrix}
 \usage{
@@ -61,4 +61,3 @@ summary(g)
 \seealso{
 \code{\link{available.packages}}, \code{\link{graph.data.frame}}
 }
-

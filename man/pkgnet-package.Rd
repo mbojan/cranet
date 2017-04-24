@@ -17,4 +17,3 @@ quickly scan package forward and reverse dependencies.
 Author and maintainter: Michal Bojanowski
 }
 \keyword{package}
-

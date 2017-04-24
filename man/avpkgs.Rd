@@ -18,4 +18,3 @@ Snapshot of packages avaiable on CRAN on 2016-08-12
 built from such matrix.
 }
 \keyword{datasets}
-
