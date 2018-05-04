@@ -1,4 +1,4 @@
-Package: pkgnet
+Package: cranet
 Type: Package
 Title: Build and Analyze Network of R Packages
 Version: 0.1-0
@@ -16,8 +16,8 @@ Imports:
     igraph
 Suggests: testthat
 License: MIT + file LICENSE
-URL: https://github.com/mbojan/pkgnet
-BugReports: https://github.com/mbojan/pkgnet/issues
+URL: https://github.com/mbojan/cranet
+BugReports: https://github.com/mbojan/cranet/issues
 LazyLoad: yes
 LazyData: yes
 RoxygenNote: 6.0.1
