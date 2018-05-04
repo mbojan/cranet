@@ -1,8 +1,8 @@
 Package: cranet
 Type: Package
 Title: Build and Analyze Network of R Packages
-Version: 0.1-0
-Date: 2016-08-12
+Version: 1.0-0
+Date: 2018-05-04
 Authors@R: person("Michal", "Bojanowski", role=c("aut", "cre"), email="michal2992@gmail.com")
 Description: Package DESCRIPTION files allows for specifying several types of
     inter-package relations. These include fields like Depends, Suggests,
