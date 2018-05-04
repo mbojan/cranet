@@ -5,24 +5,24 @@
 \alias{crannet}
 \title{Snapshot of CRAN packages}
 \format{The network object is of class \code{igraph}. It is a directed network which
-contains \Sexpr{igraph::vcount(pkgnet::crannet)} packages (vertices) and 
-\Sexpr{igraph::ecount(pkgnet::crannet)} inter-package relations (edges). The
+contains \Sexpr{igraph::vcount(cranet::crannet)} packages (vertices) and 
+\Sexpr{igraph::ecount(cranet::crannet)} inter-package relations (edges). The
 network, together with vertex and edge attributes is build from the matrix as
 returned by \code{\link{available.packages}}, which in turn is based on
 package DESCRIPTION files.
 
 Available edge attributes: 
-\Sexpr{paste( igraph::list.edge.attributes(pkgnet::crannet), collapse=", ")}
+\Sexpr{paste( igraph::list.edge.attributes(cranet::crannet), collapse=", ")}
 
 Available vertex attributes:
-\Sexpr{paste( igraph::list.vertex.attributes(pkgnet::crannet), collapse=", ")}. 
+\Sexpr{paste( igraph::list.vertex.attributes(cranet::crannet), collapse=", ")}. 
 
 The network is a multi-graph, i.e. there may be multiple edges between a 
 given pair of nodes. This corresponds to the fact, that package X may, for 
 example, both depend and import package Y.  To disentangle the types of 
 relations one can use edge attribute \code{type} which identifies a type of 
 inter-package relation. Possible values are of this attribute are: 
-\Sexpr{paste( sort(unique(igraph::E(pkgnet::crannet)$type)), collapse=", ")}.
+\Sexpr{paste( sort(unique(igraph::E(cranet::crannet)$type)), collapse=", ")}.
 They come from the respective columns in the matrix returned by
 \code{\link{available.packages}}.
 
