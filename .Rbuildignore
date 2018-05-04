@@ -1,7 +1,8 @@
 man-roxygen
 ^.*\.Rproj$
 ^\.Rproj\.user$
-.travis.yml
-appveyor.yml
+^\.travis\.yml$
+^appveyor\.yml$
 Makefile
 internal
+^README\.Rmd$
