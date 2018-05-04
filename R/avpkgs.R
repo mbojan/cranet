@@ -3,9 +3,9 @@
 #' Snapshot of packages avaiable on CRAN on 2016-08-12
 #'
 #' @format 
-#' A \Sexpr{paste(dim(pkgnet::avpkgs), collapse="x")} matrix 
+#' A \Sexpr{paste(dim(cranet::avpkgs), collapse="x")} matrix 
 #' returned by \code{\link{available.packages}} with the following column names:
-#' \Sexpr{paste( dQuote(colnames(pkgnet::avpkgs)), collapse=", ")}.
+#' \Sexpr{paste( dQuote(colnames(cranet::avpkgs)), collapse=", ")}.
 #' 
 #' @source Fetched from \url{http://cloud.r-project.org} on August 12, 2016.
 #' 
