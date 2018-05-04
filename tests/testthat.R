@@ -1,4 +1,4 @@
 library(testthat)
-library(pkgnet)
+library(cranet)
 
-test_check("pkgnet")
+test_check("cranet")
