@@ -2,14 +2,14 @@
 #' 
 #' Package DESCRIPTION files allows for specifying several types of 
 #' inter-package relations. These include fields like Depends, Suggests, 
-#' Enhances etc. This package and function \code{\link{pkgnet}} allows for 
+#' Enhances etc. This package and function \code{\link{cranet}} allows for 
 #' recovering graph structure based on these relations. Network representation 
 #' of R repositories enables the user to explore the interconnected space of 
 #' available R functionality while the developers or repository maintainers can 
 #' quickly scan package forward and reverse dependencies.
 #' 
 #' 
-#' @name pkgnet-package
+#' @name cranet-package
 #' @docType package
 #' @author Author and maintainter: Michal Bojanowski
 #' @keywords package
